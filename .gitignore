@@ -32,6 +32,9 @@ htmlcov/
 *.sqlite
 *.sqlite3
 
+# Local user memory data
+data/user_memories.json
+
 # Vector stores / generated data
 data/vectorstore/
 
