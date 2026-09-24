@@ -35,11 +35,6 @@ htmlcov/
 # Local user memory data
 data/user_memories.json
 
-# Vector stores / generated data
-data/vectorstore/
-
-# Uploaded/generated documents
-data/documents/
 
 # Temporary files
 *.tmp

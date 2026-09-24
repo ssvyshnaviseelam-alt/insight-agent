@@ -7,7 +7,7 @@ from app.utils.logger import get_logger
 # Configuration
 # --------------------------------------------------
 
-API_URL = "http://127.0.0.1:8000/chat"
+API_URL = "http://api:8000/chat"
 logger = get_logger("InsightAgent.Streamlit")
 def get_tool_label(tool_used: str) -> str:
     labels = {

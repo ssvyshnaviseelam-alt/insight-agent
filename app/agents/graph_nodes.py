@@ -258,6 +258,24 @@ def mcp_node(state):
     else:
         result = "No matching MCP tool found."
 
+    # MCP may return TextContent objects.
+    # Extract the actual text before passing it to the final answer node.
+    if isinstance(result, list):
+        text_parts = []
+
+        for item in result:
+            if hasattr(item, "text"):
+                text_parts.append(item.text)
+            elif isinstance(item, dict) and "text" in item:
+                text_parts.append(item["text"])
+            else:
+                text_parts.append(str(item))
+
+        result = "\n".join(text_parts)
+
+    elif hasattr(result, "text"):
+        result = result.text
+
     logger.info(
         "MCP tool completed"
     )
