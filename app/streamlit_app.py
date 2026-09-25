@@ -1,13 +1,13 @@
 import requests
 import streamlit as st
 from app.utils.logger import get_logger
-
+import os
 
 # --------------------------------------------------
 # Configuration
 # --------------------------------------------------
 
-API_URL = "http://api:8000/chat"
+API_URL = os.getenv("API_URL", "http://api:8000/chat")
 logger = get_logger("InsightAgent.Streamlit")
 def get_tool_label(tool_used: str) -> str:
     labels = {
